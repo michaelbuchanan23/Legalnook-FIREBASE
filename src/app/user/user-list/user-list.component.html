@@ -1,0 +1,28 @@
+<div style="margin:10px">
+<h1>Users</h1>
+<button (click)="add()"><i class="fas fa-user-plus"></i></button>
+<br />
+<br />
+<table class="table table-bordered">
+	<thead>
+		<tr>
+			<th>Username</th>
+			<th>Password</th>
+			<th>Email</th>
+			<th>Law School</th>
+			<th>Edit</th>
+			<th>Delete</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr *ngFor="let user of users | async">
+			<td>{{user.data.username}}</td>
+			<td>{{user.data.password}}</td>
+			<td>{{user.data.email}}</td>
+			<td>{{user.data.lawschool}}</td>
+			<td><a [routerLink]="['/add',user.id]"><i class="fas fa-user-edit"></i></a></td>
+			<td><a><i (click)="delete(user.id,user.data.username)" class="fas fa-trash-alt"></i></a></td>
+		</tr>
+	</tbody>
+</table>
+</div>

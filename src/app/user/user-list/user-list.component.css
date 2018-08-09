@@ -1,0 +1,17 @@
+button:hover	{
+	cursor: pointer;
+	color:blue;
+}
+
+a:link, a:visited, a:active  {
+	color:#000;
+}
+
+a:hover	{
+	cursor: pointer;
+	color:blue;
+}
+
+i:hover {
+	color:blue;
+}

@@ -4,11 +4,25 @@
   <meta charset="utf-8">
   <title>Legalnook</title>
   <base href="/">
-
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
 </head>
 <body>
   <app-root></app-root>
+ <script src="https://www.gstatic.com/firebasejs/5.3.1/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyDOaP2UZWRfJsvXnGRWKlbYRG-XjvgrHHg",
+    authDomain: "legalnook-fe46b.firebaseapp.com",
+    databaseURL: "https://legalnook-fe46b.firebaseio.com",
+    projectId: "legalnook-fe46b",
+    storageBucket: "legalnook-fe46b.appspot.com",
+    messagingSenderId: "94526440572"
+  };
+  firebase.initializeApp(config);
+</script>
 </body>
 </html>
