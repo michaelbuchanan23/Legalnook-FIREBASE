@@ -26,9 +26,11 @@
 		
 		<div class="form-group">
 			<label for="lawschool">Law School</label>
-			<input [(ngModel)]="user.lawschool"  class="form-control" formControlName="lawschool">
+			<select [(ngModel)]="user.lawschool"  class="form-control" formControlName="lawschool">
+				<option *ngFor="let l of lawSchools | async" [ngValue]=l.data.lawSchool>{{l.data.lawSchool}}</option>
+			</select>
 		</div>
 
-		<button [disabled]="!form.valid" class="btn btn-primary" type="submit">{{title}}</button>
-</form>
+		<button [disabled]="!form.valid" class="btn btn-primary" type="submit">{{button}}</button>
+	</form>
 </div>

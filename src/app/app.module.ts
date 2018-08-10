@@ -19,13 +19,17 @@ import { routing } from './app.routing';
 import { UserFormComponent } from './user/user-form/user-form.component';
 
 import { ReactiveFormsModule } from '@angular/forms';
+import { ImportPipe } from './utility/import.pipe';
+import { SortPipe } from './utility/sort.pipe';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     UserListComponent,
-    UserFormComponent
+    UserFormComponent,
+    ImportPipe,
+    SortPipe
   ],
   imports: [
     BrowserModule,

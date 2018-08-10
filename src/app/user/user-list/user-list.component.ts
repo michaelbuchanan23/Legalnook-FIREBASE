@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument} from 'angularfire2/firestore';
 import { Router } from '@angular/router';
 import { map } from 'rxjs/operators';
+import { Lawschool } from '../../lawschools/lawschool';
+import { SortPipe } from '../../utility/sort.pipe';
 
 interface User {
 	username: string;
@@ -20,6 +22,21 @@ export class UserListComponent implements OnInit {
 
 	usersCol: AngularFirestoreCollection<User>;
 	users: any
+	
+	lawSchoolsCol: AngularFirestoreCollection<Lawschool>;
+	lawSchools: any;
+
+	// sortProperty: string = "username";
+	// sortOrder: string = "asc";
+
+	// sort(sortBy: string): void {
+	// 	if(sortBy === this.sortProperty)
+	// 		this.sortOrder = this.sortOrder === 'asc' ? 'desc' : 'asc';
+	// 	else {
+	// 		this.sortProperty = sortBy;
+	// 		this.sortOrder = 'asc';
+	// 	}
+	// }
 
 	add() {
 		this._router.navigate(['add']);
@@ -46,7 +63,18 @@ export class UserListComponent implements OnInit {
   				return { id, data };
   			});
   		})
+  		);
+
+  	this.lawSchoolsCol = this.afs.collection('lawschools');
+  	this.lawSchools = this.lawSchoolsCol.snapshotChanges()
+  	.pipe(
+  		map(actions => {
+  			return actions.map( a => {
+  				const data = a.payload.doc.data() as Lawschool;
+  				const id = a.payload.doc.id;
+  				return { id, data };
+  			});
+  		})
   		); 
   }
-}
 }
