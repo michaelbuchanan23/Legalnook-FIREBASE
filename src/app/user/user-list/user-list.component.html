@@ -10,8 +10,7 @@
 			<th>Password</th>
 			<th>Email</th>
 			<th>Law School</th>
-			<th>Edit</th>
-			<th>Delete</th>
+			<th>Actions</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -20,8 +19,10 @@
 			<td>{{user.data.password}}</td>
 			<td>{{user.data.email}}</td>
 			<td>{{user.data.lawschool}}</td>
-			<td><a [routerLink]="['/add',user.id]"><i class="fas fa-user-edit"></i></a></td>
-			<td><a><i (click)="delete(user.id,user.data.username)" class="fas fa-trash-alt"></i></a></td>
+			<td>
+				<a [routerLink]="['/add',user.id]" style="margin:0px 10px 0px 0px;"><i class="fas fa-user-edit"></i></a>
+				<a><i (click)="delete(user.id,user.data.username)" class="fas fa-trash-alt"></i></a>
+			</td>
 		</tr>
 	</tbody>
 </table>
